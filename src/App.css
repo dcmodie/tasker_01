@@ -1,7 +1,22 @@
 
-.greeting {
+.container {
   border: 1px solid;
   margin: auto;
   width: 50%;
   padding: 10px;
 }
+
+.addInput{
+ 
+    border-radius: 25px;
+    background: #e7ebe1;
+    padding: 5px;
+    width:100%
+   
+    
+  }
+
+  .inputContainer {
+    margin: auto;
+    width: 50%;
+  }
