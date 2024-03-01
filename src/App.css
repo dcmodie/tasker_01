@@ -15,8 +15,37 @@
    
     
   }
+  .itemDescComplete {
+    color:pink
+  }
+
+  .itemDescIncomplete {
+    color:rgb(205, 255, 192)
+  }
 
   .inputContainer {
     margin: auto;
     width: 50%;
+    margin-bottom: 20px;
   }
+
+  .completeButton{
+    float:right;
+  }
+
+  .removeButton{
+    float:right;
+  }
+
+
+  .listItem{
+    height:20px;
+    border-radius: 20px;
+    margin-bottom:5px;
+    
+    background: #ffffff;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid;
+  }
+
+ 

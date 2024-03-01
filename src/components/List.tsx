@@ -1,9 +1,24 @@
 import { Task } from '../types';
+import ListItem from './ListItem';
 
-const List: React.FC<Task[]> = ({ list }) => {
+interface ListProps {
+  list: Task[];
+  markItemDone: (itemNumber: number) => void;
+  removeItem: (itemNumber: number) => void;
+}
+
+const List: React.FC<ListProps> = ({ list, markItemDone, removeItem }) => {
   const renderList = () => {
     return list.map((item) => {
-      return <div key={item.id}>{item.description}</div>;
+      return (
+        <div key={item.id}>
+          <ListItem
+            item={item}
+            markItemDone={markItemDone}
+            removeItem={removeItem}
+          />
+        </div>
+      );
     });
   };
 

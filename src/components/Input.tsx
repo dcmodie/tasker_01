@@ -2,28 +2,28 @@ import { Task } from '../types';
 import { useState } from 'react';
 
 interface InputProps {
-  submitItem: () => void;
+  submitItem: (description: string) => void;
 }
 
-const Input: React.FC<Task[]> = ({ submitItem }: InputProps) => {
+const Input: React.FC<InputProps> = ({ submitItem }) => {
   const [input, setInput] = useState('');
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLInputElement>) => {
     e.preventDefault();
     submitItem(input);
     setInput('');
   };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInput(e.target.value);
+  };
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="inputContainer">
-        <input
-          value={input}
-          className="addInput"
-          onChange={(e) => {
-            setInput(e.target.value);
-          }}
-        />
-      </div>
-    </form>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <div className="inputContainer">
+          <input value={input} className="addInput" onChange={handleChange} />
+        </div>
+      </form>
+    </div>
   );
 };
 export default Input;
